@@ -13,11 +13,9 @@ class FoodItem(models.Model):
     ]
 
     MEAT_CHOICES = [
+        ('Ground Beef', 'Ground Beef'),
         ('Steak', 'Steak'),
         ('Chicken', 'Chicken'),
-        ('Pastor', 'Pastor'),
-        ('Chorizo', 'Chorizo'),
-        ('Ground Beef', 'Ground Beef'),
     ]
 
     name = models.CharField(max_length=100, choices=FOOD_CHOICES)
