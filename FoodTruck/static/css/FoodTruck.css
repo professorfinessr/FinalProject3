@@ -1,0 +1,11 @@
+title a {
+    color:blue
+}
+
+h1 a, h2 a {
+    color:blueviolet
+}
+
+body {
+    padding-left: 30px;
+}
