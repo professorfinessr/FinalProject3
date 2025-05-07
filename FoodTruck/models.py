@@ -33,3 +33,14 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Order(models.Model):
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    item = models.ManyToManyField(FoodItem)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def total_price(self):
+        return sum(item.price for item in self.item.all())
+    
+    def __str__(self):
+        return f"Order #{self.id} - {self.customer.name}"
